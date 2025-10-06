@@ -1,6 +1,16 @@
 # DevOps Internship Assessment
 Containerize and deploy a Next.js app using Docker, GitHub Actions, and Minikube.
 
+## Objective
+
+This project demonstrates:
+
+Containerizing a Next.js app using Docker
+
+Automating image build and push using GitHub Actions and GitHub Container Registry (GHCR)
+
+Deploying the containerized app to Kubernetes (Minikube) using manifests
+
 ## Prerequisites
 - Git
 - Docker
@@ -8,16 +18,31 @@ Containerize and deploy a Next.js app using Docker, GitHub Actions, and Minikube
 - Minikube & kubectl
 - GitHub account
 
-## Local run
-```bash
+## Local Setup & Run
+Run Locally with Node.js
+# Install dependencies
 npm ci
+
+# Run development server
 npm run dev
-# or build and run Docker
+
+Access the app at:
+http://localhost:3000
+
+# Run with Docker
+# Build Docker image
 docker build -t nextjs-app .
+
+# Run container
 docker run -p 3000:3000 nextjs-app
+
+
+Access the app at:
+http://localhost:3000
+
 ```
 
-## GitHub Actions
+## Github Action
 Workflow builds and pushes image to GHCR on every push to `main`.
 
 ## Kubernetes Deployment
@@ -28,4 +53,13 @@ kubectl apply -f k8s/service.yaml
 minikube service nextjs-service --url
 ```
 
-Replace `YOUR-GITHUB-USERNAME` in deployment.yaml with your actual username.
+## Repository Structure
+.
+├── Dockerfile
+├── .github/workflows/ci-cd.yml
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+├── package.json
+└── README.md
+
