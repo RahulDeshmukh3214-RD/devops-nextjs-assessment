@@ -48,5 +48,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.TAG }}
+            ghcr.io/rahuldeshmukh3214-rd/devops-nextjs-assessment:latest
+            ghcr.io/rahuldeshmukh3214-rd/devops-nextjs-assessment:${{ github.ref_name }}
